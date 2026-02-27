@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merci ! — Occupe Ton Kids</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Baloo 2', cursive;
+      background: linear-gradient(135deg, #FFF7ED 0%, #FEF3C7 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 48px;
+      max-width: 560px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,.1);
+    }
+    .emoji { font-size: 72px; margin-bottom: 16px; }
+    h1 { font-size: 36px; font-weight: 900; color: #F97316; margin-bottom: 12px; }
+    p { font-size: 18px; color: #555; margin-bottom: 8px; line-height: 1.6; }
+    .email-notice {
+      background: #FFF7ED;
+      border: 2px solid #FED7AA;
+      border-radius: 16px;
+      padding: 20px;
+      margin: 24px 0;
+      font-size: 16px;
+      color: #92400E;
+    }
+    .btn {
+      display: inline-block;
+      background: #F97316;
+      color: white;
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 900;
+      font-size: 18px;
+      margin-top: 16px;
+      transition: transform .2s;
+    }
+    .btn:hover { transform: translateY(-3px); }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="emoji">🎉</div>
+    <h1>Merci pour ton achat !</h1>
+    <p>Ton paiement a bien été reçu.</p>
+    <div class="email-notice">
+      📬 <strong>Vérifie ta boîte email</strong> — tes jeux à imprimer arrivent dans quelques minutes !<br><br>
+      Pense à vérifier tes <strong>spams</strong> si tu ne reçois rien.
+    </div>
+    <p style="font-size:15px;color:#999;">Des questions ? Réponds directement à l'email de confirmation.</p>
+    <a href="https://occupekids.fr" class="btn">← Retour au site</a>
+  </div>
+</body>
+</html>
