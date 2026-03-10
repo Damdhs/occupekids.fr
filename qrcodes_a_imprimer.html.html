@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🐣 QR Codes à imprimer — Chasse aux Œufs 2026</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family:'Quicksand',sans-serif;
+    background:#F5F5F5;
+    padding:2rem;
+  }
+
+  .page-header {
+    text-align:center;
+    margin-bottom:2.5rem;
+    background:linear-gradient(135deg,#FF6B6B,#FFD93D);
+    border-radius:24px;
+    padding:2rem;
+    color:white;
+  }
+  .page-header h1 { font-family:'Fredoka One',cursive; font-size:2rem; margin-bottom:.4rem; }
+  .page-header p  { font-weight:600; opacity:.9; font-size:.95rem; }
+
+  .instructions {
+    background:white;
+    border-radius:20px;
+    padding:1.5rem 2rem;
+    margin-bottom:2rem;
+    border-left:5px solid #FFD93D;
+    box-shadow:0 3px 14px rgba(0,0,0,.06);
+  }
+  .instructions h2 { font-family:'Fredoka One',cursive; font-size:1.2rem; color:#1A1A2E; margin-bottom:.8rem; }
+  .instructions ol  { padding-left:1.4rem; }
+  .instructions li  { font-weight:600; color:#7C7C9A; margin-bottom:.4rem; font-size:.92rem; line-height:1.6; }
+  .instructions li strong { color:#2C2C54; }
+
+  .qr-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));
+    gap:1.5rem;
+    max-width:1000px;
+    margin:0 auto;
+  }
+
+  .qr-card {
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 6px 24px rgba(0,0,0,.1);
+    page-break-inside:avoid;
+    break-inside:avoid;
+  }
+
+  .qr-header {
+    padding:1.2rem;
+    text-align:center;
+    color:white;
+  }
+  .qr-emoji  { font-size:2.5rem; display:block; margin-bottom:.3rem; }
+  .qr-title  { font-family:'Fredoka One',cursive; font-size:1rem; margin-bottom:.3rem; text-shadow:1px 1px 0 rgba(0,0,0,.15); }
+  .qr-pts    { font-size:.8rem; font-weight:700; background:rgba(255,255,255,.25); border-radius:50px; padding:.2rem .7rem; display:inline-block; }
+
+  .qr-body {
+    padding:1.5rem;
+    text-align:center;
+  }
+  .qr-code { display:flex; justify-content:center; margin-bottom:1rem; }
+  .qr-code canvas, .qr-code img { border-radius:8px; border:3px solid #F0F0F0; }
+  .qr-url  { font-size:.7rem; color:#B0B0C0; font-weight:600; margin-bottom:.6rem; word-break:break-all; }
+  .qr-hint { font-size:.82rem; font-weight:700; color:#7C7C9A; }
+
+  .qr-footer {
+    background:#FAFAF8;
+    border-top:2px dashed #E8E8F0;
+    padding:.6rem;
+    text-align:center;
+    font-size:.75rem;
+    font-weight:700;
+    color:#B0B0C0;
+  }
+  .cut-line {
+    height:3px;
+    background:repeating-linear-gradient(90deg, #E0E0E0 0, #E0E0E0 8px, transparent 8px, transparent 16px);
+    margin-top:0;
+  }
+
+  .anon-reminder {
+    background:linear-gradient(135deg,#FFF0F0,#FFE8E8);
+    border-radius:20px;
+    padding:1.5rem 2rem;
+    margin:2rem auto;
+    max-width:1000px;
+    border:2px solid #FF6B6B44;
+    text-align:center;
+  }
+  .anon-reminder h3 { font-family:'Fredoka One',cursive; font-size:1.3rem; color:#CC2222; margin-bottom:.6rem; }
+  .anon-reminder p  { font-weight:600; color:#AA2222; font-size:.92rem; line-height:1.7; }
+  .anon-pills { display:flex; flex-wrap:wrap; gap:.5rem; justify-content:center; margin-top:.8rem; }
+  .anon-pill  { background:white; border:2px solid #FF6B6B44; border-radius:50px; padding:.3rem .8rem; font-size:.82rem; font-weight:700; color:#AA2222; }
+
+  .print-btn {
+    display:block;
+    margin:2rem auto;
+    padding:1rem 3rem;
+    background:linear-gradient(135deg,#FF6B6B,#FF9A3C);
+    color:white;
+    border:none;
+    border-radius:50px;
+    font-family:'Fredoka One',cursive;
+    font-size:1.2rem;
+    cursor:pointer;
+    box-shadow:0 6px 20px rgba(255,107,107,.35);
+    transition:all .2s;
+  }
+  .print-btn:hover { transform:translateY(-2px); }
+
+  @media print {
+    body { background:white; padding:0; }
+    .page-header, .instructions, .anon-reminder, .print-btn { display:none; }
+    .qr-grid { grid-template-columns:repeat(2,1fr); gap:1rem; padding:1rem; }
+    .qr-card { box-shadow:none; border:1px solid #EEE; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>🐣 QR Codes — Chasse aux Œufs 2026</h1>
+  <p>Imprime cette page, découpe les cartes et glisse-les dans les œufs !</p>
+</div>
+
+<div class="instructions">
+  <h2>📋 Mode d'emploi</h2>
+  <ol>
+    <li><strong>Imprime</strong> cette page (mode paysage recommandé pour 2 colonnes)</li>
+    <li><strong>Découpe</strong> chaque carte sur les pointillés</li>
+    <li><strong>Glisse</strong> chaque carte dans un œuf en plastique</li>
+    <li><strong>Cache</strong> les œufs avant le début de la chasse !</li>
+    <li>L'enfant <strong>scanne le QR code</strong> avec son smartphone pour accéder au défi</li>
+  </ol>
+</div>
+
+<div class="anon-reminder">
+  <h3>🎭 Rappel important : anonymat des photos</h3>
+  <p>Tous les enfants participant aux défis photo/vidéo doivent avoir le visage protégé.<br>
+  Aucune photo de visage identifiable ne sera publiée sur les réseaux sociaux.</p>
+  <div class="anon-pills">
+    <span class="anon-pill">🐰 Masque lapin</span>
+    <span class="anon-pill">🎭 Masque carnaval</span>
+    <span class="anon-pill">🕶️ Lunettes rigolotes</span>
+    <span class="anon-pill">🤿 Masque de plongée</span>
+    <span class="anon-pill">🦸 Masque super-héros</span>
+    <span class="anon-pill">🖼️ Visage flouté</span>
+    <span class="anon-pill">📷 Vue de dos</span>
+  </div>
+</div>
+
+<button class="print-btn" onclick="window.print()">🖨️ Imprimer les QR codes</button>
+
+<div class="qr-grid">
+
+      <div class="qr-card">
+        <div class="qr-header" style="background:linear-gradient(135deg,#FF6B6B,#FF6B6Bcc);">
+          <span class="qr-emoji">🥚</span>
+          <div class="qr-title">Défi 1 — Trouve l'œuf caché !</div>
+          <div class="qr-pts">+10 pts</div>
+        </div>
+        <div class="qr-body">
+          <div class="qr-code" id="qr1"></div>
+          <div class="qr-url">https://occupekids.fr/chasse2026/defi1.html</div>
+          <div class="qr-hint">📱 Scanne ce QR code pour accéder au défi !</div>
+        </div>
+        <div class="qr-footer">
+          🐣 OccupeKids.fr — Chasse aux Œufs 2026
+        </div>
+        <div class="cut-line"></div>
+      </div>
+      <div class="qr-card">
+        <div class="qr-header" style="background:linear-gradient(135deg,#4D96FF,#4D96FFcc);">
+          <span class="qr-emoji">🎥</span>
+          <div class="qr-title">Défi 2 — Mini-défi photo</div>
+          <div class="qr-pts">+15 pts</div>
+        </div>
+        <div class="qr-body">
+          <div class="qr-code" id="qr2"></div>
+          <div class="qr-url">https://occupekids.fr/chasse2026/defi2.html</div>
+          <div class="qr-hint">📱 Scanne ce QR code pour accéder au défi !</div>
+        </div>
+        <div class="qr-footer">
+          🐣 OccupeKids.fr — Chasse aux Œufs 2026
+        </div>
+        <div class="cut-line"></div>
+      </div>
+      <div class="qr-card">
+        <div class="qr-header" style="background:linear-gradient(135deg,#4ECDC4,#4ECDC4cc);">
+          <span class="qr-emoji">🎨</span>
+          <div class="qr-title">Défi 3 — Danse du lapin</div>
+          <div class="qr-pts">+20 pts</div>
+        </div>
+        <div class="qr-body">
+          <div class="qr-code" id="qr3"></div>
+          <div class="qr-url">https://occupekids.fr/chasse2026/defi3.html</div>
+          <div class="qr-hint">📱 Scanne ce QR code pour accéder au défi !</div>
+        </div>
+        <div class="qr-footer">
+          🐣 OccupeKids.fr — Chasse aux Œufs 2026
+        </div>
+        <div class="cut-line"></div>
+      </div>
+      <div class="qr-card">
+        <div class="qr-header" style="background:linear-gradient(135deg,#C77DFF,#C77DFFcc);">
+          <span class="qr-emoji">🔵</span>
+          <div class="qr-title">Défi 4 — Œuf bonus QR bleu</div>
+          <div class="qr-pts">+25 pts</div>
+        </div>
+        <div class="qr-body">
+          <div class="qr-code" id="qr4"></div>
+          <div class="qr-url">https://occupekids.fr/chasse2026/defi4.html</div>
+          <div class="qr-hint">📱 Scanne ce QR code pour accéder au défi !</div>
+        </div>
+        <div class="qr-footer">
+          🐣 OccupeKids.fr — Chasse aux Œufs 2026
+        </div>
+        <div class="cut-line"></div>
+      </div>
+      <div class="qr-card">
+        <div class="qr-header" style="background:linear-gradient(135deg,#FF9A3C,#FF9A3Ccc);">
+          <span class="qr-emoji">🏅</span>
+          <div class="qr-title">Défi 5 — Photo champion</div>
+          <div class="qr-pts">+30 pts</div>
+        </div>
+        <div class="qr-body">
+          <div class="qr-code" id="qr5"></div>
+          <div class="qr-url">https://occupekids.fr/chasse2026/defi5.html</div>
+          <div class="qr-hint">📱 Scanne ce QR code pour accéder au défi !</div>
+        </div>
+        <div class="qr-footer">
+          🐣 OccupeKids.fr — Chasse aux Œufs 2026
+        </div>
+        <div class="cut-line"></div>
+      </div>
+</div>
+
+<script>
+const defis = [
+  {num:1, url:"https://occupekids.fr/chasse2026/defi1.html", couleur:"#FF6B6B"},
+  {num:2, url:"https://occupekids.fr/chasse2026/defi2.html", couleur:"#4D96FF"},
+  {num:3, url:"https://occupekids.fr/chasse2026/defi3.html", couleur:"#4ECDC4"},
+  {num:4, url:"https://occupekids.fr/chasse2026/defi4.html", couleur:"#C77DFF"},
+  {num:5, url:"https://occupekids.fr/chasse2026/defi5.html", couleur:"#FF9A3C"},
+];
+
+defis.forEach(d => {
+  new QRCode(document.getElementById('qr' + d.num), {
+    text: d.url,
+    width: 180,
+    height: 180,
+    colorDark: d.couleur,
+    colorLight: "#ffffff",
+    correctLevel: QRCode.CorrectLevel.H
+  });
+});
+</script>
+</body>
+</html>
