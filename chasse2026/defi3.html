@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Œuf n°3 — Masque de Lapin 🐰</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #FFF9F0; font-family: 'Quicksand', sans-serif; min-height: 100vh; }
+  .hero { background: linear-gradient(135deg, #4ECDC4, #2C9E96); padding: 40px 20px 60px; text-align: center; }
+  .badge { display: inline-block; background: rgba(255,255,255,0.25); color: #fff; font-family: 'Fredoka One', cursive; font-size: 13px; padding: 6px 18px; border-radius: 50px; margin-bottom: 16px; letter-spacing: 1px; }
+  .hero-emoji { font-size: 72px; margin-bottom: 12px; }
+  .hero h1 { font-family: 'Fredoka One', cursive; color: #fff; font-size: clamp(28px, 6vw, 42px); margin-bottom: 8px; }
+  .hero p { color: rgba(255,255,255,0.92); font-size: 17px; font-weight: 600; }
+  .points-badge { display: inline-block; background: #FFD93D; color: #2C2C54; font-family: 'Fredoka One', cursive; font-size: 22px; padding: 8px 24px; border-radius: 50px; margin-top: 20px; box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+  .container { max-width: 600px; margin: 0 auto; padding: 0 20px 60px; }
+  .card { background: #fff; border-radius: 20px; padding: 28px; margin-top: -30px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); margin-bottom: 16px; }
+  .card h2 { font-family: 'Fredoka One', cursive; font-size: 22px; color: #2C2C54; margin-bottom: 16px; }
+  .found-tag { background: #4ECDC4; color: #fff; font-family: 'Fredoka One', cursive; font-size: 17px; border-radius: 12px; padding: 14px 20px; margin-bottom: 20px; text-align: center; }
+  .defi-box { background: linear-gradient(135deg, #E8FAF9, #FFF9F0); border-radius: 16px; padding: 24px; border-left: 5px solid #4ECDC4; margin-bottom: 20px; }
+  .defi-box h3 { font-family: 'Fredoka One', cursive; font-size: 20px; color: #2C9E96; margin-bottom: 10px; }
+  .defi-box p { color: #444; font-size: 16px; line-height: 1.6; }
+  .ideas-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 16px 0; }
+  .idea-item { background: #F0FAF9; border-radius: 12px; padding: 12px 14px; font-size: 14px; color: #444; text-align: center; line-height: 1.5; }
+  .idea-item .icon { font-size: 24px; display: block; margin-bottom: 6px; }
+  .steps { list-style: none; }
+  .steps li { display: flex; align-items: flex-start; gap: 14px; padding: 12px 0; border-bottom: 1px solid #F0F0F0; font-size: 16px; color: #444; line-height: 1.5; }
+  .steps li:last-child { border-bottom: none; }
+  .step-num { background: linear-gradient(135deg, #4ECDC4, #2C9E96); color: #fff; font-family: 'Fredoka One', cursive; font-size: 16px; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .share-section { text-align: center; }
+  .share-section p { color: #777; font-size: 15px; margin-bottom: 20px; line-height: 1.6; }
+  .btn { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 28px; border-radius: 50px; font-family: 'Fredoka One', cursive; font-size: 18px; text-decoration: none; margin-bottom: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); transition: transform 0.2s; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-insta { background: linear-gradient(135deg, #E1306C, #F77737); color: #fff; }
+  .btn-fb { background: #1877F2; color: #fff; }
+  .btn-mail { background: linear-gradient(135deg, #4ECDC4, #2C9E96); color: #fff; }
+  .tip { background: #F0F4FF; border-radius: 12px; padding: 16px 20px; font-size: 14px; color: #666; line-height: 1.6; margin-bottom: 16px; }
+  .tip strong { color: #2C2C54; }
+  .important-box { background: #FFF3E0; border-radius: 12px; padding: 16px 20px; margin-bottom: 16px; border-left: 4px solid #FF9A3C; }
+  .important-box p { font-size: 15px; color: #5C3D11; line-height: 1.6; }
+  .progress { display: flex; justify-content: center; gap: 8px; padding: 16px 0 8px; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; background: #ddd; }
+  .dot.done { background: #4ECDC4; }
+  .dot.active { background: #4ECDC4; transform: scale(1.3); }
+  .nav-next { display: flex; align-items: center; justify-content: center; gap: 10px; background: linear-gradient(135deg, #4ECDC4, #2C9E96); color: #fff; font-family: 'Fredoka One', cursive; font-size: 18px; padding: 18px 32px; border-radius: 50px; text-decoration: none; box-shadow: 0 4px 20px rgba(78,205,196,0.4); text-align: center; margin-top: 8px; }
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="badge">🐰 Œuf n°3 — Défi Créatif</div>
+  <div class="hero-emoji">🐰</div>
+  <h1>Crée ton masque de lapin !</h1>
+  <p>Avec ce que tu veux, comme tu veux !</p>
+  <div class="points-badge">⭐ +20 points</div>
+</div>
+<div class="container">
+  <div class="card">
+    <div class="found-tag">🎉 Wow ! Tu as trouvé le 3ème œuf avec QR code !</div>
+    <h2>🎯 Ton défi</h2>
+    <div class="defi-box">
+      <h3>🐰 Crée un masque de lapin !</h3>
+      <p>Crée un masque de lapin avec <strong>ce que tu veux</strong> — du papier, du carton, des feuilles, des feutres, de la peinture... Garde-le précieusement pour la suite ! Et si tu veux, fais-en <strong>un pour toute la famille</strong> 🐇</p>
+    </div>
+
+    <h3 style="font-family:'Fredoka One',cursive;color:#2C9E96;font-size:17px;margin-bottom:12px;">💡 Idées de matériaux :</h3>
+    <div class="ideas-grid">
+      <div class="idea-item"><span class="icon">📄</span>Papier / carton à découper</div>
+      <div class="idea-item"><span class="icon">🎨</span>Peinture & feutres colorés</div>
+      <div class="idea-item"><span class="icon">✂️</span>Ciseaux + colle + scotch</div>
+      <div class="idea-item"><span class="icon">🌸</span>Fleurs, feuilles, paillettes</div>
+    </div>
+
+    <ul class="steps">
+      <li><div class="step-num">1</div><span>Prends du carton ou du papier épais 🐰</span></li>
+      <li><div class="step-num">2</div><span><strong>Dessine et découpe</strong> la forme de ton masque de lapin avec les oreilles ✂️</span></li>
+      <li><div class="step-num">3</div><span><strong>Décore-le</strong> comme tu veux : peinture, feutres, collages, paillettes !</span></li>
+      <li><div class="step-num">4</div><span><strong>Garde-le précieusement</strong> — tu en auras besoin pour le Défi 5 ! 🤫</span></li>
+      <li><div class="step-num">5</div><span>Envoie-nous une photo de ton masque pour <strong>valider tes +20 points !</strong></span></li>
+    </ul>
+  </div>
+
+  <div class="important-box">
+    <p>🐰 <strong>Conseil :</strong> Fais-en plusieurs pour toute la famille — vous en aurez besoin pour la photo finale du Défi 5 !</p>
+  </div>
+
+  <div class="card share-section">
+    <h2>📤 Envoie ta photo !</h2>
+    <p>Envoie-nous la photo de ton masque de lapin en <strong>message privé</strong> sur Instagram ou Facebook, ou par email !</p>
+    <a href="https://www.instagram.com/occupetonkids/" target="_blank" class="btn btn-insta">📸 Instagram @occupetonkids</a>
+    <a href="https://www.facebook.com/occupekids/" target="_blank" class="btn btn-fb">👍 Facebook OccupeKids</a>
+    <a href="mailto:occupetonkids@gmail.com?subject=Défi 3 - Mon masque de lapin 🐰&body=Bonjour ! Voici la photo de mon masque de lapin pour valider le Défi 3 de la Chasse aux Œufs OccupeKids 2026 !" class="btn btn-mail">📧 Envoyer par email</a>
+  </div>
+
+  <div class="tip">💡 <strong>Rappel :</strong> Garde bien ton masque — tu vas en avoir besoin pour le <strong>Défi 5</strong>, la photo de famille !</div>
+
+  <div class="progress">
+    <div class="dot done"></div>
+    <div class="dot done"></div>
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+</div>
+</body>
+</html>
