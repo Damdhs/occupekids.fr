@@ -2050,5 +2050,90 @@ document.addEventListener('mouseleave', function(e) {
 resetAbandonTimer();
 
 </script>
+  <!-- 🐰 BOUTON LAPIN PÂQUES -->
+<a href="/chasse_oeufs_2026.html" class="lapin-btn" title="Événement Pâques gratuit !">
+  <div class="lapin-bubble">🎁 Gratuit !</div>
+  <div class="lapin-icon">
+    <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Oreilles -->
+      <ellipse cx="18" cy="12" rx="5" ry="11" fill="white" stroke="#E8A0BF" stroke-width="1.5"/>
+      <ellipse cx="34" cy="12" rx="5" ry="11" fill="white" stroke="#E8A0BF" stroke-width="1.5"/>
+      <ellipse cx="18" cy="12" rx="3" ry="8" fill="#FFB6C1"/>
+      <ellipse cx="34" cy="12" rx="3" ry="8" fill="#FFB6C1"/>
+      <!-- Corps -->
+      <ellipse cx="26" cy="34" rx="16" ry="14" fill="white" stroke="#E8A0BF" stroke-width="1.5"/>
+      <!-- Visage -->
+      <circle cx="21" cy="30" r="2" fill="#333"/>
+      <circle cx="31" cy="30" r="2" fill="#333"/>
+      <circle cx="22" cy="29" r="0.7" fill="white"/>
+      <circle cx="32" cy="29" r="0.7" fill="white"/>
+      <!-- Nez -->
+      <ellipse cx="26" cy="34" rx="2" ry="1.5" fill="#FFB6C1"/>
+      <!-- Bouche -->
+      <path d="M24 35.5 Q26 37.5 28 35.5" stroke="#999" stroke-width="1" fill="none" stroke-linecap="round"/>
+      <!-- Joues -->
+      <ellipse cx="19" cy="34" rx="3" ry="2" fill="#FFB6C1" opacity="0.4"/>
+      <ellipse cx="33" cy="34" rx="3" ry="2" fill="#FFB6C1" opacity="0.4"/>
+      <!-- Queue -->
+      <circle cx="26" cy="47" r="3.5" fill="white" stroke="#E8A0BF" stroke-width="1"/>
+    </svg>
+  </div>
+  <div class="lapin-label">Pâques 🥚</div>
+</a>
+
+<style>
+.lapin-btn {
+  position: fixed;
+  left: 20px;
+  bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  z-index: 9999;
+  animation: lapinBounce 2s ease-in-out infinite;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));
+}
+.lapin-icon {
+  width: 64px; height: 64px;
+  background: linear-gradient(135deg, #FFF0F5, #FFE4F0);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  border: 2.5px solid #FFB6C1;
+  box-shadow: 0 4px 16px rgba(255,182,193,0.5);
+  transition: transform 0.2s;
+}
+.lapin-btn:hover .lapin-icon {
+  transform: scale(1.1);
+}
+.lapin-bubble {
+  background: #FF3E8A;
+  color: white;
+  font-family: sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  animation: lapinPulse 1.5s ease-in-out infinite;
+  box-shadow: 0 2px 8px rgba(255,62,138,0.4);
+}
+.lapin-label {
+  font-family: sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: #E8A0BF;
+  letter-spacing: 0.05em;
+}
+@keyframes lapinBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes lapinPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+</style>
 </body>
 </html>
