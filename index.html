@@ -598,6 +598,79 @@ footer strong{color:var(--orange)}
 .cart-notice{font-size:11px;color:#9CA3AF;font-weight:700;text-align:center;margin-top:10px}
 @keyframes cartPop{0%{transform:scale(1)}50%{transform:scale(1.25)}100%{transform:scale(1)}}
 .cart-pop{animation:cartPop .3s ease}
+.blog-section {
+  padding: 60px 24px;
+  background: #F5EDD6;
+  text-align: center;
+}
+.blog-section .section-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7B7080;
+}
+.blog-section h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1A1025;
+  margin: 8px 0 10px;
+}
+.blog-section > div > p {
+  color: #7B7080;
+  font-size: 15px;
+  margin-bottom: 32px;
+}
+.blog-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.blog-card {
+  background: #fff;
+  border: 1px solid #E0D4B8;
+  border-radius: 14px;
+  padding: 28px 24px;
+  max-width: 360px;
+  text-align: left;
+  text-decoration: none;
+  color: #1A1025;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+.blog-card-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #FF3E8A;
+}
+.blog-card h3 {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #1A1025;
+}
+.blog-card p {
+  font-size: 14px;
+  color: #7B7080;
+  line-height: 1.55;
+}
+.blog-card-link {
+  font-size: 13px;
+  font-weight: 700;
+  color: #FF3E8A;
+  margin-top: 4px;
+}
 </style>
 </head>
 <body>
