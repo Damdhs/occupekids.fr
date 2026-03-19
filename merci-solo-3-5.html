@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merci ! Ton pack est prêt — Occupe Ton Kids</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Baloo 2', cursive;
+      background: linear-gradient(135deg, #FFF7ED 0%, #FEF3C7 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 48px 40px;
+      max-width: 580px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,.1);
+    }
+    .emoji { font-size: 64px; margin-bottom: 12px; }
+    h1 { font-size: 32px; font-weight: 900; color: #F97316; margin-bottom: 8px; }
+    .subtitle { font-size: 17px; color: #777; margin-bottom: 24px; line-height: 1.5; }
+
+    .pack-title {
+      background: #FFF7ED;
+      border: 2px solid #FED7AA;
+      border-radius: 14px;
+      padding: 14px 20px;
+      margin-bottom: 28px;
+      font-size: 15px;
+      color: #92400E;
+      font-weight: 700;
+    }
+
+    /* BOUTONS TÉLÉCHARGEMENT */
+    .downloads { display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px; }
+
+    .dl-btn {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: linear-gradient(135deg, #F97316, #FB923C);
+      color: white;
+      padding: 16px 24px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: 900;
+      font-size: 16px;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 4px 14px rgba(249,115,22,0.35);
+    }
+    .dl-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(249,115,22,0.45); }
+    .dl-btn .num {
+      width: 36px; height: 36px;
+      background: rgba(255,255,255,0.25);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; font-weight: 900;
+      flex-shrink: 0;
+    }
+    .dl-btn .info { text-align: left; }
+    .dl-btn .info .name { font-size: 15px; font-weight: 900; }
+    .dl-btn .info .hint { font-size: 12px; opacity: 0.8; font-weight: 400; }
+    .dl-btn .arrow { margin-left: auto; font-size: 20px; }
+
+    /* CONSEIL */
+    .conseil {
+      background: #F0FDF4;
+      border: 2px solid #BBF7D0;
+      border-radius: 14px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      font-size: 14px;
+      color: #166534;
+      line-height: 1.6;
+      text-align: left;
+    }
+    .conseil strong { display: block; margin-bottom: 4px; font-size: 15px; }
+
+    .btn-retour {
+      display: inline-block;
+      background: #1A1025;
+      color: white;
+      padding: 13px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      transition: transform .2s;
+    }
+    .btn-retour:hover { transform: translateY(-2px); }
+
+    .footer-note {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="emoji">🎉</div>
+    <h1>Merci pour ton achat !</h1>
+    <p class="subtitle">Ton paiement a bien été reçu.<br>Tes kits sont prêts à télécharger maintenant !</p>
+
+    <div class="pack-title">
+      🖍️ Pack Solo 3–5 ans — L'Atelier Créatif des Petits<br>
+      <span style="font-weight:400;font-size:13px">3 kits · Impressions illimitées · À toi pour toujours</span>
+    </div>
+
+    <!-- TÉLÉCHARGEMENTS -->
+    <div class="downloads">
+      <a href="https://drive.google.com/uc?export=download&id=1PrTVgszFtpm4nUJsw926iaC34-9fCXXJ" class="dl-btn" target="_blank">
+        <div class="num">1</div>
+        <div class="info">
+          <div class="name">🎨 Mon Carnet Magique</div>
+          <div class="hint">Coloriages & créations guidées · 12 pages</div>
+        </div>
+        <div class="arrow">⬇️</div>
+      </a>
+      <a href="https://drive.google.com/uc?export=download&id=1kppt-oX5VbkCqxqymo_ERpSZ3fCfdBSZ" class="dl-btn" target="_blank">
+        <div class="num">2</div>
+        <div class="info">
+          <div class="name">🖌️ L'Atelier des Petits Artistes</div>
+          <div class="hint">Dessine ton monde imaginaire · 10 cartes défis</div>
+        </div>
+        <div class="arrow">⬇️</div>
+      </a>
+      <a href="https://drive.google.com/uc?export=download&id=1rzcNBSjhc-LHGj5yHrs-x6u3TF_gTTJv" class="dl-btn" target="_blank">
+        <div class="num">3</div>
+        <div class="info">
+          <div class="name">📔 Le Journal de l'Explorateur</div>
+          <div class="hint">Colle, dessine & invente tes aventures · 12 pages</div>
+        </div>
+        <div class="arrow">⬇️</div>
+      </a>
+    </div>
+
+    <!-- CONSEIL -->
+    <div class="conseil">
+      <strong>💡 Comment utiliser tes kits ?</strong>
+      Imprime sur du papier A4 standard (ou 120g pour un résultat premium). 
+      Pose le kit sur la table, explique les règles en 2 minutes — et profite de ta soirée ! 🥂
+    </div>
+
+    <a href="https://www.occupekids.fr" class="btn-retour">← Retour au site</a>
+
+    <p class="footer-note">
+      Un problème ? Écris-nous à <strong>contact@occupekids.fr</strong><br>
+      Ces fichiers t'appartiennent — imprime-les autant de fois que tu veux !
+    </p>
+  </div>
+</body>
+</html>
