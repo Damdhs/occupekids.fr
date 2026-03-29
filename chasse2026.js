@@ -3,6 +3,7 @@ function updateCountdown() {
   var target = new Date('2026-04-04T08:00:00');
   var now = new Date();
   var diff = target - now;
+
   if (diff <= 0) {
     document.getElementById('days').textContent = '0';
     document.getElementById('hours').textContent = '0';
@@ -10,11 +11,13 @@ function updateCountdown() {
     document.getElementById('seconds').textContent = '0';
     return;
   }
+
   document.getElementById('days').textContent = Math.floor(diff / 86400000);
   document.getElementById('hours').textContent = Math.floor((diff % 86400000) / 3600000);
   document.getElementById('minutes').textContent = Math.floor((diff % 3600000) / 60000);
   document.getElementById('seconds').textContent = Math.floor((diff % 60000) / 1000);
 }
+
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
