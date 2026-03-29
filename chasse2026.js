@@ -1,6 +1,6 @@
 // Compte à rebours
 function updateCountdown() {
-  var target = new Date('2026-04-18T08:00:00');
+  var target = new Date('2026-04-04T08:00:00');
   var now = new Date();
   var diff = target - now;
   if (diff <= 0) {
