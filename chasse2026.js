@@ -1,8 +1,10 @@
 // Compte à rebours
 function updateCountdown() {
-  var target = new Date('2026-04-04T08:00:00');
+  // Date en heure locale (France)
+  var target = new Date(2026, 3, 4, 8, 0, 0); // mois = 3 (avril)
+
   var now = new Date();
-  var diff = target - now;
+  var diff = target.getTime() - now.getTime();
 
   if (diff <= 0) {
     document.getElementById('days').textContent = '0';
@@ -12,10 +14,15 @@ function updateCountdown() {
     return;
   }
 
-  document.getElementById('days').textContent = Math.floor(diff / 86400000);
-  document.getElementById('hours').textContent = Math.floor((diff % 86400000) / 3600000);
-  document.getElementById('minutes').textContent = Math.floor((diff % 3600000) / 60000);
-  document.getElementById('seconds').textContent = Math.floor((diff % 60000) / 1000);
+  var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  var minutes = Math.floor((diff / (1000 * 60)) % 60);
+  var seconds = Math.floor((diff / 1000) % 60);
+
+  document.getElementById('days').textContent = days;
+  document.getElementById('hours').textContent = hours;
+  document.getElementById('minutes').textContent = minutes;
+  document.getElementById('seconds').textContent = seconds;
 }
 
 updateCountdown();
